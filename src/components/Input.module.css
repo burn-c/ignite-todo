@@ -1,0 +1,15 @@
+.inputWrapper {
+  width: 100%;
+  max-width: 638px;
+  padding: 16px;
+
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+  background: var(--gray-500);
+
+  &:focus {
+    outline: transparent;
+    border: 1px solid var(--purple-dark);
+  }
+}
+

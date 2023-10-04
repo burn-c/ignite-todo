@@ -39,6 +39,11 @@
   box-sizing: border-box;
 }
 
+:focus {
+  outline: transparent;
+  border: 1px solid var(--purple-dark);
+}
+
 body, input, textarea, button {
   font-size: 1rem;
 }
