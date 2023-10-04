@@ -30,7 +30,7 @@ function App() {
     setNewTaskText(event.target.value) 
   }
 
-  function handleChangeStatusTask(id: string) {
+  function changeStatusTask(id: string) {
     const updateTaskListStatus = tasks.map(task => {
       if (task.id === id) { 
         return {...task, isCompleted: !task.isCompleted}
@@ -38,6 +38,13 @@ function App() {
     })
     setTasks([...updateTaskListStatus])
   }
+
+  const deleteTask = (id: string) => {
+    const newListTask = tasks?.filter(task => task.id === id)
+
+    setTasks([...newListTask])
+  }
+
 
   const isEmptyTaskList = tasks.length === 0 
   const tasksAmount = tasks.length
@@ -74,7 +81,8 @@ function App() {
             key={task.id}
             taskName={task.taskName}
             isCompleted={task.isCompleted}
-            handleChangeStatusTask={handleChangeStatusTask}
+            changeStatusTask={changeStatusTask}
+            deleteTask={deleteTask}
           />
         )}
         </section>

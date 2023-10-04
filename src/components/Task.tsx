@@ -6,11 +6,13 @@ interface TaskProps {
   id: string;
   taskName: string;
   isCompleted: boolean;
-  handleChangeStatusTask(id: string): void;
+  changeStatusTask(id: string): void;
+  deleteTask(id: string): void;
 }
 
-export default function Task({ id, taskName, handleChangeStatusTask, isCompleted }:TaskProps) {
-  const handleDeleteTask = () => {}
+export default function Task({ id, taskName, changeStatusTask, isCompleted, deleteTask }:TaskProps) {
+  const handleChangeStatusTask = () => changeStatusTask(id)
+  const handleDeleteTask = () => deleteTask(id)
 
   const taskCheckedStyle = {
     color: `var(--gray-300)`,
@@ -30,7 +32,7 @@ export default function Task({ id, taskName, handleChangeStatusTask, isCompleted
             type="checkbox" 
             id={checkboxId}
             checked={isCompleted}
-            onChange={() => handleChangeStatusTask(id)}
+            onChange={handleChangeStatusTask}
             />
           <label htmlFor={checkboxId} />
         </div>
