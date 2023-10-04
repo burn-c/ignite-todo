@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 import CreateTaskButton from './components/CreateTaskButton'
 import Header from './components/Header'
@@ -20,8 +21,7 @@ function App() {
   function handleCreateTask(event: FormEvent) {
     event.preventDefault()
 
-    // ToDo: use UUID
-    const newTaskId = Math.random()
+    const newTaskId = uuidv4()
     setTasks([...tasks, { id:newTaskId, taskName: newTaskText }])
   }
 
