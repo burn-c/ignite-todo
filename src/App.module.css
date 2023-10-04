@@ -1,4 +1,22 @@
 .wrapper {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  top: -44px;
+}
+
+.content {
+  width: 100%;
+  max-width: 736px;
+}
+
+.createTaskContent {
+  width: 100%;
+  gap: 8px;
+}
+
+.tableTitle {
+  display: flex;
+  justify-content: space-between;
 }
