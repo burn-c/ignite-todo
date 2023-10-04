@@ -1,8 +1,8 @@
-import { Trash } from 'phosphor-react'
-
-import styles from './App.module.css'
 import Header from './components/Header'
 import Input from './components/Input'
+import Task from './components/Task'
+
+import styles from './App.module.css'
 
 function App() {
   return (
@@ -27,13 +27,13 @@ function App() {
         </div>
 
         <section>
-          <div>
-            <input type="checkbox" name="task" id="task" />
-            Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
-            <button type="button">
-              <Trash/>
-            </button>
-          </div>
+          <Task 
+            id='523h4n89n' 
+            taskName='Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.'/>
+
+          <Task 
+            id='523h4n89n' 
+            taskName='Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.'/>
         </section>
 
         </main>
