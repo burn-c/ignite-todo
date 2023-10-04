@@ -45,7 +45,6 @@ function App() {
     setTasks([...newListTask])
   }
 
-
   const isEmptyTaskList = tasks.length === 0 
   const tasksAmount = tasks.length
   const totalTasksCompleted = tasks?.filter(task => task.isCompleted === true)?.length ?? 0
@@ -63,12 +62,18 @@ function App() {
         </form>
 
         <div className={styles.tableTitle}>
-          <div>
+          <div className={styles.tasksCreatedContainer}>
             <span>Tarefas criadas</span> <span>{tasksAmount}</span>
           </div>
 
-          <div>
-            <span>Concluídas</span> <span>{totalTasksCompleted} de {tasksAmount}</span>
+          <div className={styles.tasksCompletedStatusContainer}>
+            <span>Concluídas</span> 
+            <span>
+              {isEmptyTaskList 
+                ? 0 
+                : `${totalTasksCompleted} de ${tasksAmount}`
+              }
+            </span>
           </div>
         </div>
 
