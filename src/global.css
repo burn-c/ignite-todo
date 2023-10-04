@@ -25,6 +25,7 @@
   /*    SPACES */
   --space-small: 0.75rem;
   --space-medium: 1.5rem;
+  --space-large: 4.0625rem;
 
   font-family: Inter, sans-serif;
   line-height: 1.4; // 140%
