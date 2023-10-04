@@ -1,7 +1,7 @@
 .taskWrapper {
   display: flex;
+  justify-content: space-between;
   padding: 16px;
-  align-items: flex-start;
   gap: 12px;
   
   border-radius: 8px;
@@ -29,6 +29,11 @@
     background: var(--gray-400);
     color: var(--danger);
   }
+}
+
+.taskInfo {
+  display: flex;
+  gap: 16px;
 }
 
 .checkboxContainer {
