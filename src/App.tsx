@@ -6,6 +6,7 @@ import Input from './components/Input'
 import Task from './components/Task'
 
 import styles from './App.module.css'
+import EmptyTaskList from './components/EmptyTaskList'
 
 interface TasksProps {
   id: string | number;
@@ -19,6 +20,7 @@ function App() {
   function handleCreateTask(event: FormEvent) {
     event.preventDefault()
 
+    // ToDo: use UUID
     const newTaskId = Math.random()
     setTasks([...tasks, { id:newTaskId, taskName: newTaskText }])
   }
@@ -26,6 +28,8 @@ function App() {
   function handleNewTaskTextChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTaskText(event.target.value) 
   }
+
+  const isEmptyTaskList = tasks.length === 0 
 
   return (
     <>
@@ -50,14 +54,15 @@ function App() {
         </div>
 
         <section>
-          {tasks.map((task) => 
-            <Task
-              id={task.id}
-              key={task.id}
-              taskName={task.taskName}
-            />
-          )}
-
+        {isEmptyTaskList
+          ? <EmptyTaskList/> 
+          : tasks.map((task) => 
+          <Task
+            id={task.id}
+            key={task.id}
+            taskName={task.taskName}
+          />
+        )}
         </section>
 
         </main>

@@ -21,6 +21,7 @@
   /*   FONT SIZE */
   --font-size-small: 0.75rem;
   --font-size-medium: 0.875rem;
+  --font-size-big: 1rem;
 
   /*    SPACES */
   --space-small: 0.75rem;
@@ -28,7 +29,7 @@
   --space-large: 4.0625rem;
 
   font-family: Inter, sans-serif;
-  line-height: 1.4; // 140%
+  line-height: 1.4;  /* 140% */
   font-weight: 400;
 
   color-scheme: light dark;
@@ -59,4 +60,17 @@ body, input, textarea, button {
 
 button {
   cursor: pointer;
+}
+
+h1, h2 {
+  color: var(--gray-300);
+  font-size: var(--font-size-big);
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 400;
 }
