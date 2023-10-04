@@ -1,20 +1,15 @@
-import { useState } from "react";
 import { Trash } from "phosphor-react";
 
 import styles from './Task.module.css'
 
 interface TaskProps {
-  id: string | number;
+  id: string;
   taskName: string;
+  isCompleted: boolean;
+  handleChangeStatusTask(id: string): void;
 }
 
-export default function Task({ taskName }:TaskProps) {
-  const [isChecked, setIsChecked] = useState(false)
-
-  function handleChangeStatusTask() {
-    setIsChecked(!isChecked)
-  }
-
+export default function Task({ id, taskName, handleChangeStatusTask, isCompleted }:TaskProps) {
   const handleDeleteTask = () => {}
 
   const taskCheckedStyle = {
@@ -22,20 +17,22 @@ export default function Task({ taskName }:TaskProps) {
     textDecorationLine: `line-through`
   }
 
+  const checkboxId = `checkbox-${id}`
+
   return (
     <div 
       className={styles.taskWrapper}  
-      {...(isChecked ? {style: taskCheckedStyle } : null)} 
+      {...(isCompleted ? {style: taskCheckedStyle } : null)} 
     >
       <div className={styles.taskInfo}>
         <div className={styles.checkboxContainer}>
           <input 
             type="checkbox" 
-            id="checkbox" 
-            checked={isChecked}
-            onChange={handleChangeStatusTask}
+            id={checkboxId}
+            checked={isCompleted}
+            onChange={() => handleChangeStatusTask(id)}
             />
-          <label htmlFor="checkbox" />
+          <label htmlFor={checkboxId} />
         </div>
 
         {taskName}
