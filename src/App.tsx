@@ -1,10 +1,32 @@
+import { ChangeEvent, FormEvent, useState } from 'react'
+
+import CreateTaskButton from './components/CreateTaskButton'
 import Header from './components/Header'
 import Input from './components/Input'
 import Task from './components/Task'
 
 import styles from './App.module.css'
 
+interface TasksProps {
+  id: string | number;
+  taskName: string;
+}
+
 function App() {
+  const [tasks, setTasks] = useState<TasksProps[]>([])
+  const [newTaskText, setNewTaskText] = useState('')
+
+  function handleCreateTask(event: FormEvent) {
+    event.preventDefault()
+
+    const newTaskId = Math.random()
+    setTasks([...tasks, { id:newTaskId, taskName: newTaskText }])
+  }
+
+  function handleNewTaskTextChange(event: ChangeEvent<HTMLInputElement>) {
+    setNewTaskText(event.target.value) 
+  }
+
   return (
     <>
       <Header/>
@@ -12,9 +34,10 @@ function App() {
       <div className={styles.wrapper}>
         <main className={styles.content}>
           
-        <div className={styles.createTaskContent}>
-          <Input/>
-        </div>
+        <form onSubmit={handleCreateTask} className={styles.createTaskContent}>
+          <Input value={newTaskText} onChange={handleNewTaskTextChange}/>
+          <CreateTaskButton/>
+        </form>
 
         <div className={styles.tableTitle}>
           <div>
@@ -27,13 +50,14 @@ function App() {
         </div>
 
         <section>
-          <Task 
-            id='523h4n89n' 
-            taskName='Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.'/>
+          {tasks.map((task) => 
+            <Task
+              id={task.id}
+              key={task.id}
+              taskName={task.taskName}
+            />
+          )}
 
-          <Task 
-            id='523h4n89n' 
-            taskName='Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.'/>
         </section>
 
         </main>
