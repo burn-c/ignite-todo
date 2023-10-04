@@ -40,7 +40,7 @@ function App() {
   }
 
   const deleteTask = (id: string) => {
-    const newListTask = tasks?.filter(task => task.id === id)
+    const newListTask = tasks?.filter(task => task.id !== id)
 
     setTasks([...newListTask])
   }
