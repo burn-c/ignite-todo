@@ -1,0 +1,9 @@
+.header {
+  display: grid;
+  place-items: center;
+  height: 200px;
+  position: relative;
+  top: -18px;
+
+  background: var(--gray-700);
+}
