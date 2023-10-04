@@ -24,6 +24,7 @@ function App() {
 
     const newTaskId = uuidv4()
     setTasks([...tasks, { id:newTaskId, taskName: newTaskText, isCompleted: false }])
+    setNewTaskText('')
   }
 
   function handleNewTaskTextChange(event: ChangeEvent<HTMLInputElement>) {
