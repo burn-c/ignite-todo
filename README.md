@@ -42,7 +42,7 @@ Aplicação de todo list para controlar suas tarefas.
 1. Clonar repositório:
 
 ```sh
-git clone https://github.com/burn-c/ignite-todo.git
+git clone https://github.com/burn-c/todo.git
 ```
 2. Entre na pasta do projeto clonado e instale às dependências utilizando o comando:
 
