@@ -9,8 +9,9 @@ Aplicação de todo list para controlar suas tarefas.
   Feito com ReactJS + Vite +  TypeScript
 </h5>
 
-
-
+<h3 align="center">
+  <a href="https://todo.burndev.app/">🗒️ Teste o App aqui :)</a>
+</h3>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/burn-c/ignite-todo?color=red">
