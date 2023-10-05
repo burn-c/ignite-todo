@@ -70,6 +70,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 -  [ReactJS](https://reactjs.org/)
 -  [Vite](https://vitejs.dev/)
 -  [TypeScript](https://www.typescriptlang.org/)
+-  [CSS3](https://www.w3.org/Style/CSS/Overview.en.html)
 -  [Phosphor Icons](https://phosphoricons.com/)
 -  [uuid](https://github.com/uuidjs/uuid)
 -  [ESLint](https://eslint.org/)
