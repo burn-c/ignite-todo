@@ -1,12 +1,15 @@
+import { ButtonHTMLAttributes, FC } from 'react'
 import { PlusCircle } from 'phosphor-react'
 
 import styles from './CreateTaskButton.module.css'
 
-export default function CreateTaskButton() {
+const CreateTaskButton: FC<ButtonHTMLAttributes<HTMLButtonElement>> = (props) => {
   return (
-    <button type='submit' className={styles.createTaskButton}>
+    <button type='submit' className={styles.createTaskButton} {...props}>
       Criar
       <PlusCircle size={18} weight='bold'/>
     </button>
   )
 }
+
+export default CreateTaskButton
