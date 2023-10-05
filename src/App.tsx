@@ -47,6 +47,7 @@ function App() {
   }
 
   const isEmptyTaskList = tasks.length === 0 
+  const isEmptyTaskTextInput = newTaskText === ''
   const tasksAmount = tasks.length
   const totalTasksCompleted = tasks?.filter(task => task.isCompleted === true)?.length ?? 0
 
@@ -58,8 +59,8 @@ function App() {
         <main className={styles.content}>
           
         <form onSubmit={handleCreateTask} className={styles.createTaskContent}>
-          <Input value={newTaskText} onChange={handleNewTaskTextChange}/>
-          <CreateTaskButton/>
+          <Input value={newTaskText} onChange={handleNewTaskTextChange} />
+          <CreateTaskButton disabled={isEmptyTaskTextInput}/>
         </form>
 
         <div className={styles.tableTitle}>
